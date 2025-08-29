@@ -1,0 +1,132 @@
+.intro {
+  width: 92%;
+  margin-inline: auto;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.available {
+  font-size: 1rem;
+  width: fit-content;
+  justify-self: start;
+  border-radius: 0.5rem;
+  background-color: var(--background-main);
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.available div {
+  width: 0.9rem;
+  background-color: #27ae60;
+  height: 0.9rem;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+
+.intro-container {
+  display: flex;
+}
+
+.intro-text {
+  position: relative;
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+.show {
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.intro-text p {
+  font-size: 1.6rem;
+}
+
+.intro-animation {
+  display: flex;
+  align-items: center;
+  width: 550px;
+}
+
+.intro-animation img {
+  width: 400px;
+  opacity: 0;
+  animation: slideInZoomRotate 1.7s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideInZoomRotate {
+  0% {
+    transform: translateX(100%) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(0) scale(1.1) rotate(10deg);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translateX(0) scale(1.05) rotate(-5deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.location {
+  color: #444;
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  background-color: white;
+  border: black solid 2px;
+  border-radius: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.download-button:hover {
+  background-color: black;
+  color: var(--background-main);
+}
+
+@media (max-width: 840px) {
+  .intro {
+    margin-top: 1rem;
+    font-size: 1.85rem;
+  }
+  .intro-container {
+    display: block;
+  }
+  .intro-text p {
+    font-size: 1.3rem;
+    margin-top: 1em;
+  }
+  .intro-animation {
+    display: block;
+    margin-top: 2rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+  .intro-animation img {
+    margin-inline: auto;
+    display: block;
+    width: 90%;
+  }
+}

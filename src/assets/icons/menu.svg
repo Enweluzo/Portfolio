@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- Top line: medium -->
+  <line x1="8" y1="12" x2="40" y2="12" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <!-- Middle line: longest -->
+  <line x1="4" y1="24" x2="44" y2="24" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+  <!-- Bottom line: shortest -->
+  <line x1="12" y1="36" x2="36" y2="36" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,12 @@
+.project {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-inline: auto;
+}
+
+.project-container {
+  background-color: red;
+  height: 30rem;
+}
