@@ -24,7 +24,6 @@ function Intro() {
         </div>
       </div>
       <button className="download-button">
-        {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

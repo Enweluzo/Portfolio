@@ -41,6 +41,7 @@ function MobileHeader({ navElements, image, setImage }) {
         {navElements.map((elements, index) => {
           return (
             <div
+              key={index}
               className={
                 image === index
                   ? "img-container img-container-active"
@@ -52,7 +53,6 @@ function MobileHeader({ navElements, image, setImage }) {
             >
               <img
                 ref={navRef}
-                key={index}
                 src={image === index ? elements.imageActive : elements.image}
                 alt=""
               />
