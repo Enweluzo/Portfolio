@@ -2,7 +2,7 @@ import animation from "../assets/animation.webp";
 import "../intro.css";
 function Intro() {
   return (
-    <section className="intro">
+    <section className="intro" id="intro">
       <div className="available">
         <div></div> <span>Available for new opportunities</span>
       </div>

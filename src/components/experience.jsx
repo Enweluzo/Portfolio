@@ -6,7 +6,7 @@ import "../experience.css";
 
 function ExperienceFirst({ experienceRef, nameOfClass, desktopFix }) {
   return (
-    <div ref={experienceRef} className={nameOfClass}>
+    <div ref={experienceRef} className={nameOfClass} id="experience">
       <div className={desktopFix ? ` circle ${desktopFix}` : "circle"}></div>
       <h3>Self-Taught Developer - Fronend Projects</h3>
       <p className="time-line">

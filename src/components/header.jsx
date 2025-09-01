@@ -16,16 +16,23 @@ import contact from "../assets/icons/contact.svg";
 import contactActive from "../assets/icons/contact-active.svg";
 import menu from "../assets/icons/menu.svg";
 import logo from "../assets/icons/logo1.svg";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import "../header.css";
 import "../header-nav-mobile.css";
 
 function MobileHeader({ navElements, image, setImage }) {
-  let navRef = useRef(null);
+  const navRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
   function toggle() {
-    navRef.current.classList.toggle("hide");
-    navRef.current.classList.toggle("transition");
+    setOpen((prev) => !prev);
   }
+
+  function closeSidebar() {
+    setOpen(false);
+  }
+  dayjs.extend(localizedFormat);
 
   return (
     <header className="header">
@@ -37,9 +44,19 @@ function MobileHeader({ navElements, image, setImage }) {
           <img src={menu} alt="" />
         </div>
       </div>
-      <div ref={navRef} className="nav hide">
-        {navElements.map((elements, index) => {
-          return (
+      <div
+        ref={navRef}
+        className={`mobile-nav-overlay${open ? " open" : ""}`}
+        onClick={closeSidebar}
+      >
+        <nav
+          className="mobile-nav-content"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button className="close-mobile-nav" onClick={closeSidebar}>
+            &times;
+          </button>
+          {navElements.map((elements, index) => (
             <div
               key={index}
               className={
@@ -52,13 +69,16 @@ function MobileHeader({ navElements, image, setImage }) {
               }}
             >
               <img
-                ref={navRef}
                 src={image === index ? elements.imageActive : elements.image}
                 alt=""
               />
+              <span className="mobile-nav-text">{elements.text}</span>
             </div>
-          );
-        })}
+          ))}
+          <div className="available date">
+            <div></div> <span>{dayjs().format("LLL")}</span>
+          </div>
+        </nav>
       </div>
     </header>
   );
@@ -73,7 +93,8 @@ function DesktopHeader({ navElements, image, setImage }) {
         <nav>
           {navElements.map((elements, index) => {
             return (
-              <div
+              <a
+                href={elements.link}
                 key={index}
                 className="nav-elements"
                 onMouseEnter={() => {
@@ -88,7 +109,7 @@ function DesktopHeader({ navElements, image, setImage }) {
                   alt=""
                 />{" "}
                 <span>{elements.text}</span>
-              </div>
+              </a>
             );
           })}
         </nav>
@@ -100,15 +121,36 @@ function DesktopHeader({ navElements, image, setImage }) {
 function Header() {
   let [image, setImage] = useState(false);
   const navElements = [
-    { image: home, imageActive: homeActive, text: "Home" },
-    { image: about, imageActive: aboutActive, text: "About" },
-    { image: experience, imageActive: experienceActive, text: "Experience" },
-    { image: projects, imageActive: projectsActive, text: "Projects" },
-    { image: skills, imageActive: skillsActive, text: "Skills" },
+    {
+      image: home,
+      imageActive: homeActive,
+      text: "Home",
+      link: "#intro",
+    },
+    { image: about, imageActive: aboutActive, text: "About", link: "#about" },
+    {
+      image: experience,
+      imageActive: experienceActive,
+      text: "Experience",
+      link: "#experience",
+    },
+    {
+      image: projects,
+      imageActive: projectsActive,
+      text: "Projects",
+      link: "#project",
+    },
+    {
+      image: skills,
+      imageActive: skillsActive,
+      text: "Skills",
+      link: "#skill",
+    },
     {
       image: testimonials,
       imageActive: testimonialsActive,
       text: "Testimonials",
+      link: "#testimonial",
     },
     { image: contact, imageActive: contactActive, text: "Contact" },
   ];

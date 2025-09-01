@@ -1,0 +1,122 @@
+.testimonial {
+  margin-top: 6rem;
+  padding-top: 6rem;
+  background-color: var(--background-main);
+  position: relative;
+}
+.testimonial h1 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.testimonial h2 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 0.4rem;
+}
+
+.testimonial-container {
+  justify-content: flex-start;
+  display: flex;
+  overflow: hidden;
+  gap: 2rem;
+  padding-top: 10rem;
+  max-width: 90%;
+  margin-inline: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: calc((100% - 25rem) / 2);
+}
+
+.testimonial-inner-container {
+  max-width: 25rem;
+  background-color: white;
+  padding: 1.5rem;
+  padding-bottom: 0.8rem;
+  border: var(--invisible-border);
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  margin-top: 3rem;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-inner-container div {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  box-shadow: var(--soft-shadow);
+}
+
+.testimonial-inner-container div img {
+  width: 100%;
+  border-radius: inherit;
+  height: 100%;
+}
+
+.testimonial-inner-container p {
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+  line-height: 1.4;
+  font-family: Georgia;
+  margin-bottom: auto;
+}
+
+.testimonial-inner-container p::after {
+  content: " ";
+  height: 1px;
+  margin-top: 1rem;
+  margin-inline: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.center-translate {
+  transform: translateY(-50%);
+}
+
+.testimonial-inner-container h2 {
+  margin-bottom: 0;
+  font-family: Georgia;
+  color: #333;
+  margin-top: auto;
+  margin-bottom: 4px;
+}
+
+.button-switch {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-switch button {
+  font-size: 1.9rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0.4rem solid #333;
+  border-radius: 50%;
+  font-weight: 700;
+  margin-inline: 1rem;
+  background-color: #333;
+}
+
+.button-switch button img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+@media (max-width: 600px) {
+  .testimonial {
+    padding-top: 4rem;
+  }
+  .testimonial-inner-container {
+    max-width: 21rem;
+  }
+}

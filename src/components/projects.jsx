@@ -17,7 +17,7 @@ function Projects() {
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. In laboriosam eaque explicabo sequi molestiae culpa commodi, consequatur illum maxime minima aliquid! Eaque assumenda corrupti autem exercitationem et, repellat veniam esse.",
   ];
   return (
-    <>
+    <div id="project">
       <h2 className="project-heading">Projects</h2>
       <h4 className="projects-subheading">
         A showcase of my work and problem-solving through code
@@ -43,7 +43,7 @@ function Projects() {
                 <p>{pro}</p>
                 <div className="project-view-container">
                   <button className="project-view">
-                    view project <img src={eye} alt="" />
+                    view <img src={eye} alt="" />
                   </button>
                   <button className="project-view-github">
                     <img src={github} alt="" />
@@ -54,7 +54,7 @@ function Projects() {
           );
         })}
       </section>
-    </>
+    </div>
   );
 }
 export default Projects;
